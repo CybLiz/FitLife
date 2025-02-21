@@ -13,11 +13,7 @@ Route::get('/reservations', function () {
 });
 
 
-Route::get('/booking', function () {
-    return view('Booking');
-});
-
-
+Route::get('/booking/{course}', [CourseController::class, 'accessBookingForm'])->name('booking');
 
 Route::get('/home', [CourseController::class, 'courses'])->name('home');
 

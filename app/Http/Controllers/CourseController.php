@@ -17,4 +17,10 @@ class CourseController extends Controller
         return view('home', ['course' => $courses]);
 
     }
+
+    public function accessBookingForm($course)
+    {
+        $course = Course::findOrFail($course); 
+        return view('Booking', ['course' => $course]);
+    }
 }

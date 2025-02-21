@@ -1,20 +1,26 @@
-
-<h1>Effectuer une réservation</h1>
-
 {{-- <form method="POST" action="{{ route('/reservations') }}"> --}}
-<form method="POST">
 
-    @csrf
+<x-layout>
+    <x-slot:heading>
+        <h1>Réservez votre cours</h1>
+    </x-slot:heading>
 
-    <label for="course_id">Choisir un cours :</label>
-    <select name="course_id" id="course_id" required>
-        @foreach ($courses as $course)
-            <option value="{{ $course->id }}">{{ $course->name }} ({{ $course->duration }} minutes)</option>
-        @endforeach
-    </select><br><br>
+    <h2>{{ $course->name }}</h2>
+    <p>{{ $course->description }}</p>
+    <p>Durée : {{ $course->duration }} minutes</p>
 
-    <label for="reservation_date">Date de la réservation :</label>
-    <input type="datetime-local" name="reservation_date" id="reservation_date" required><br><br>
+    <form method="POST">
+        @csrf
 
-    <button type="submit">Réserver</button>
-</form> 
+        <label for="course_id">Choisir un cours :</label>
+        <input type="hidden" name="course_id" value="{{ $course->id }}">
+
+        <label for="reservation_date">Date de la réservation :</label>
+        <input type="datetime-local" name="reservation_date" id="reservation_date" required><br><br>
+
+        <button type="submit"
+            class="px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+            Réserver
+        </button>
+    </form>
+</x-layout>
