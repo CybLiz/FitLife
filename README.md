@@ -1,6 +1,9 @@
 
 ## FitLife Documentation :
 
+Fichiers Modélisation et figma dans public\ModelisationBdd
+
+
 Fonctionnalités principales
 1. Affichage des Cours Disponibles
 L'utilisateur peut consulter une liste de tous les cours proposés par le centre de fitness.
