@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('reservations', function (Blueprint $table) {
-            // protected $fillable = ["reservation_date","client_id","slot_id", "course_id"];
             $table->id();
             $table->timestamp('reservation_date');
             $table->foreignIdFor(\App\Models\User::class, "user_id")->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\TimeSlot::class, "slot_id")->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Course::class, "course_id")->constrained()->cascadeOnDelete();
-
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

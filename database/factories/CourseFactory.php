@@ -19,7 +19,7 @@ class CourseFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->text(),
-            'duration' => fake()->number(),
+            'duration' => fake()->numberBetween(30, 120),
         ];
     }
 }

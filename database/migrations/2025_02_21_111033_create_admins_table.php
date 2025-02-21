@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('email');
+            $table->string('password');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
+
         });
     }
 
