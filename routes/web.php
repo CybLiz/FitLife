@@ -8,16 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', [CourseController::class, 'courses'])->name('home');
+Route::get('/booking/{course}', [CourseController::class, 'accessBookingForm'])->name('booking');
+
+Route::post('/add-reservation', [CourseController::class, 'addReservation'])->name('add.reservation');
 Route::get('/reservations', function () {
     return view('Reservations');
 });
-
-
-Route::get('/booking/{course}', [CourseController::class, 'accessBookingForm'])->name('booking');
-
-Route::get('/home', [CourseController::class, 'courses'])->name('home');
-
-
 
 
 
@@ -36,4 +33,4 @@ Route::middleware('auth')->group(function () {
 
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

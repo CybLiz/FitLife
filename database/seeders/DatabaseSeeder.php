@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory(10)->create();
-        Admin::factory(10)->create();
-        Course::factory(10)->create();
+        // User::factory(10)->create();
+        // Admin::factory(10)->create();
+        // Course::factory(10)->create();
         Reservation::factory(10)->create();
-        TimeSlot::factory(10)->create();
+        // TimeSlot::factory(10)->create();
 
 
     }

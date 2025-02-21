@@ -1,4 +1,4 @@
-{{-- <form method="POST" action="{{ route('/reservations') }}"> --}}
+<form method="POST" action="{{ route('add.reservation') }}">
 
 <x-layout>
     <x-slot:heading>
