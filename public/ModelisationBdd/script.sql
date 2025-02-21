@@ -11,7 +11,6 @@ CREATE TABLE Client(
 CREATE TABLE Admin(
    admin_id INT,
    name VARCHAR(255),
-   surname VARCHAR(255),
    email VARCHAR(255),
    password VARCHAR(255),
    PRIMARY KEY(admin_id)

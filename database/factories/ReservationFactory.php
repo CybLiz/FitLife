@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Course;
 use App\Models\TimeSlot;
 use App\Models\User;
+use App\Models\Admin;
+
 
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -27,6 +29,8 @@ class ReservationFactory extends Factory
             'user_id'=> User::factory(),
             'slot_id'=> TimeSlot::factory(),
             'course_id'=> Course::factory(),
+            'admin_id'=> Admin::factory(),
+
         ];
     }
 }

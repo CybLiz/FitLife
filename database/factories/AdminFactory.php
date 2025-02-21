@@ -23,5 +23,7 @@ class AdminFactory extends Factory
             'password'=> fake()->password(),
       
         ];
+
+        
     }
 }

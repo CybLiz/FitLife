@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class, "user_id")->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\TimeSlot::class, "slot_id")->constrained()->cascadeOnDelete();
             $table->foreignIdFor(\App\Models\Course::class, "course_id")->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Admin::class, "admin_id")->constrained()->cascadeOnDelete();
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });

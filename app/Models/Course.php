@@ -12,4 +12,14 @@ class Course extends Model
 
     protected $fillable = ["name", "description","duration"];
 
+    public function timeSlots()
+    {
+        return $this->hasMany(TimeSlot::class);
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+   
 }

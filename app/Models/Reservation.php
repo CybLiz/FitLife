@@ -11,4 +11,23 @@ class Reservation extends Model
     use HasFactory;
     protected $fillable = ["reservation_date"];
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class);
+    }
+
+    public function timeSlot()
+    {
+        return $this->belongsTo(TimeSlot::class, 'slot_id');
+    }
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }

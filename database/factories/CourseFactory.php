@@ -21,5 +21,7 @@ class CourseFactory extends Factory
             'description' => fake()->text(),
             'duration' => fake()->numberBetween(30, 120),
         ];
+
+        
     }
 }
