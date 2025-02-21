@@ -16,8 +16,8 @@ return new class extends Migration
             $table->id();
             $table->timestamp('reservation_date');
             $table->foreignIdFor(\App\Models\User::class, "user_id")->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\User::class, "slot_id")->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(\App\Models\User::class, "course_id")->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\TimeSlot::class, "slot_id")->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Course::class, "course_id")->constrained()->cascadeOnDelete();
 
         });
     }

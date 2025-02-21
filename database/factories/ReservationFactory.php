@@ -2,6 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\Course;
+use App\Models\TimeSlot;
+use App\Models\User;
+
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +22,11 @@ class ReservationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+          
+            'reservation_date'=> fake()->date(),
+            'user_id'=> User::factory(),
+            'slot_id'=> TimeSlot::factory(),
+            'course_id'=> Course::factory(),
         ];
     }
 }

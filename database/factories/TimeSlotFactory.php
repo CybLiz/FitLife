@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Factories;
+use App\Models\Course;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,8 +17,12 @@ class TimeSlotFactory extends Factory
      */
     public function definition(): array
     {
+
         return [
-            //
+            'slot_date'=> fake()->date(),
+            'start_time'=> fake()->dateTime(),
+            'end_time'=> fake()->dateTime(),
+            'course_id'=> Course::factory(),
         ];
     }
 }
